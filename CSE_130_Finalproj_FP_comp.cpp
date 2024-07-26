@@ -1,3 +1,21 @@
+/*
+Fern Potter
+CSE 130
+Scientific calculator program
+
+made in assistance with generative AI. Uses of AI listed below:
+	inserting debug statements (printf) in designed functions
+ 	identifying problems and mistakes
+  	finishing repetiive tasks
+   	adjusting formatting for readability
+AI NOT used for:
+	major design or strucuture
+ 	any original statements and design methods
+	significant design methods
+ 	large chunks of code which are not repetitive
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,7 +54,7 @@ double mdas(char userin[], int *digits) { // handles multiplication division add
             temp[j] = '\0';
             numarr1[++numuq1] = strntold(temp);
             //printf("Pushed number: %Lf\n", numarr1[numuq1]);
-            i--; // Adjust index because it will be incremented in the loop
+            i--; // Adjust index necessary because it will be incremented in the loop
         } else if (userin[i] == '+' || userin[i] == '-') {
             if (i > 0 && (userin[i - 1] == '*' || userin[i - 1] == '/' || userin[i - 1] == '+' || userin[i - 1] == '-')) {
                 // Handle the case of valid operator duos
@@ -48,7 +66,7 @@ double mdas(char userin[], int *digits) { // handles multiplication division add
                 temp[j] = '\0';
                 numarr1[++numuq1] = strntold(temp);
                 //printf("Pushed number: %Lf\n", numarr1[numuq1]);
-                i--; // Adjust index because it will be incremented in the loop
+                i--; // Adjust index necessary because it will be incremented in the loop
             } else {
                 while (opuq >= 0 && (oparr1[opuq] == '*' || oparr1[opuq] == '/' || oparr1[opuq] == '+' || oparr1[opuq] == '-')) {
                     double b = numarr1[numuq1--];
